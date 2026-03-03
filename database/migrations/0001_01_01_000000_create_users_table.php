@@ -47,3 +47,5 @@ return new class extends Migration
         Schema::dropIfExists('sessions');
     }
 };
+
+$table->enum('role', ['admin', 'pengajar', 'peserta', 'donatur'])->default('peserta');

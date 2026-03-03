@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('materis', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->string('judul_materi');
+            $table->text('deskripsi')->nullable();
+            $table->string('file_lampiran')->nullable();
             $table->timestamps();
         });
     }
